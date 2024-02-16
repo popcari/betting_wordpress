@@ -202,9 +202,7 @@ const solutions = [
 			'NAC',
 			'NDR',
 			'SIEM',
-			// missing content in image
 			'PAM',
-			'TH/TI',
 			'VA/PT',
 		],
 	},
@@ -452,7 +450,6 @@ const handleMouseLeaveTable = () => {
 		const _elm = document.getElementById(e)
 		if (_elm) {
 			_elm.style.opacity = '1'
-			// _elm.style.fontSize = '14'
 			_elm.style.fill = 'black'
 		}
 		const _classElement = document.getElementsByClassName(e)
@@ -536,16 +533,11 @@ const handleMouseOverTable = (item) => {
 				const name = `${(_elementLine.className).animVal}`
 
 				if (_elementLine && name.includes(e)) {
-					// _elementLine.style.scale = '1.03'
 					_elementLine.style.opacity = '1'
 					if (name.includes('cls-4')) {
-						// _elementLine.style.fill = '#2b2a2a'
 					} else if (name.includes('cls-5')) {
-						// _elementLine.style.fill = 'black'
 					} else if (name.includes('cls-1')) {
-						// _elementLine.style.fill = '#5ae2ff'
-						// if(_elm && item.solutions.includes(e))
-						//   _elm.style.fill = "black"
+
 					}
 				}
 			}
