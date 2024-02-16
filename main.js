@@ -223,6 +223,7 @@ const solutions = [
 			'Data_encryption',
 			'Email-sec',
 			'TH/TI',
+			'PIM/PAM',
 		],
 	},
 ]
