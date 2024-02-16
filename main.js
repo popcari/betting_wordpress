@@ -18,7 +18,7 @@ const risks = [
 	{
 		id: 3,
 		name: 'Accidental Cloud Data Disclosure',
-		solutions: ['DLP', 'Encryption', 'CSPM', 'Training_&_awareness'],
+		solutions: ['DLP', 'Encryption', "Encryptions", 'CSPM', 'Training_&_awareness'],
 	},
 	{
 		id: 4,
@@ -49,7 +49,7 @@ const risks = [
 	{
 		id: 9,
 		name: 'DLP',
-		solutions: ['Encryption', 'UEBA', 'DLP'],
+		solutions: ['Encryption', "Encryptions", 'UEBA', 'DLP'],
 	},
 ]
 const solutions = [
