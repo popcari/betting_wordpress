@@ -33,7 +33,7 @@ const risks = [
 	{
 		id: 6,
 		name: 'System Vulnerabilities',
-		solutions: ['Patch_mgmt', 'VA', 'TH/TI', 'SIEM'],
+		solutions: ['Patch_mgmt', 'VA/PT', 'TH/TI', 'SIEM'],
 	},
 	{
 		id: 7,
