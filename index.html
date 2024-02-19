@@ -6,6 +6,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Cyber Security</title>
 		<script src="https://cdn.tailwindcss.com"></script>
+		<link href="https://fonts.cdnfonts.com/css/sora-3" rel="stylesheet">
 
 		<!-- Replace with your actual CSS file or styles -->
 		<style>
@@ -31,7 +32,7 @@
 			}
 
 			.st5 {
-				font-family: 'Montserrat', sans-serif;
+				font-family: 'Sora', sans-serif;
 			}
 
 			.st6 {
@@ -48,12 +49,12 @@
 
 			tspan {
 				cursor: pointer;
-				font-family: 'Montserrat', sans-serif;
+				font-family: 'Sora', sans-serif;
 
 			}
 
 			.cyberSecurity {
-				font-family: "Montserrat", sans-serif;
+				font-family: "Sora", sans-serif;
 			}
 
 			.section__cyberSecurity .risks__item,
@@ -64,19 +65,19 @@
 	</head>
 
 	<body>
-		<div class='w-[1277px] max-w-full h-screen min-h-[900px] mx-auto p-[76.5px_0_71.5px] flex'>
+		<div class='w-[1277px] max-w-full h-screen min-h-[900px] mx-auto p-[76.5px_0_71.5px] lg:flex'>
 			<!-- risks and solution table -->
-			<div class='w-2/5 mr-[30px] '>
+			<div class='mb-10 lg:mr-[30px] lg:w-2/5 lg:mb-0'>
 				<p class='font__poppins text-[40px] font-bold leading-[60px] tracking-[0.8px] mb-6'>
 					Cyber Security
 				</p>
-				<div class='cyberSecurity '>
+				<div class='cyberSecurity p-2 lg:p-0'>
 					<div class='cyberSecurity__head grid grid-cols-2'>
-						<div class='border border-solid border-[#DBDBDB] p-4 cursor-pointer text-center' id="riskTab">
-							<p class='p-0 font-bold'>Cyber Security Risks</p>
+						<div class='border border-solid border-[#DBDBDB] p-2 lg:p-4 flex cursor-pointer' id="riskTab">
+							<p class='p-0 text-[14px] font-bold text-center'>Cyber Security Risks</p>
 						</div>
-						<div class='border border-solid border-[#DBDBDB] p-4 cursor-pointer text-center' id="approachTab">
-							<p class='p-0 font-bold'>KAPALINS APPROACH</p>
+						<div class='border border-solid border-[#DBDBDB] p-2 lg:p-4 flex cursor-pointer' id="approachTab">
+							<p class='p-0 text-[14px] font-bold text-center'>Kapalins Apprpoach</p>
 						</div>
 					</div>
 					<div id='risks__table' class='risks grid grid-cols-2'>
@@ -88,7 +89,7 @@
 				</div>
 			</div>
 			<!-- sunburst chart -->
-			<div class='w-3/5 h-full'>
+			<div class='lg:w-3/5 h-full'>
 				<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1'
 					id='Layer_2_00000075859017773107132920000010105762589442756230_' x='0px' y='0px' viewBox='0 0 790 790'
 					xml:space='preserve'>

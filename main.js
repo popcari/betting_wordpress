@@ -353,8 +353,8 @@ const approachTableElement = document.getElementById('approach');
 
 const risksTableHeader = document.getElementById('riskTab');
 const approachTableHeader = document.getElementById('approachTab');
-risksTableHeader.classList.add('bg-[#FFAB40]', 'text-white', 'uppercase', 'underline');
-approachTableHeader.classList.remove('bg-[#FFAB40]', 'text-white', 'uppercase', 'underline');
+risksTableHeader.classList.add('bg-[#FFAB40]', 'text-white', 'uppercase');
+approachTableHeader.classList.remove('bg-[#FFAB40]', 'text-white', 'uppercase');
 
 risksTableHeader.addEventListener('click', onRiskTabClick);
 approachTableHeader.addEventListener('click', onApproachClick);
@@ -393,8 +393,8 @@ function onRiskTabClick() {
 		approachTableElement.style.display = 'none';
 
 		risksTableElement.style.display = 'grid';
-		risksTableHeader.classList.add('bg-[#FFAB40]', 'text-white', 'uppercase', 'underline');
-		approachTableHeader.classList.remove('bg-[#FFAB40]', 'text-white', 'uppercase', 'underline');
+		risksTableHeader.classList.add('bg-[#FFAB40]', 'text-white', 'uppercase');
+		approachTableHeader.classList.remove('bg-[#FFAB40]', 'text-white', 'uppercase');
 	}
 }
 
@@ -406,8 +406,8 @@ function onApproachClick() {
 		risksTableElement.style.display = 'none';
 
 		approachTableElement.style.display = 'grid';
-		approachTableHeader.classList.add('bg-[#FFAB40]', 'text-white', 'uppercase', 'underline');
-		risksTableHeader.classList.remove('bg-[#FFAB40]', 'text-white', 'uppercase', 'underline');
+		approachTableHeader.classList.add('bg-[#FFAB40]', 'text-white', 'uppercase');
+		risksTableHeader.classList.remove('bg-[#FFAB40]', 'text-white', 'uppercase');
 	}
 }
 function updateTableContent(data) {
@@ -416,17 +416,12 @@ function updateTableContent(data) {
 
 	data.forEach((item, index) => {
 		const tableItem = document.createElement('div');
-		tableItem.classList.add('p-2', 'hover:bg-[#FFAB40]', 'hover:text-white', 'border', 'border-solid', 'border-[#DBDBDB]', 'hover:transition-colors');
+		tableItem.classList.add('p-2', 'hover:bg-[#FFAB40]', 'hover:text-white', 'border', 'border-solid', 'border-[#DBDBDB]', 'hover:transition-colors', 'text-[14px]');
 		tableItem.addEventListener('mousemove', () => handleMouseOverTable(item));
 		tableItem.addEventListener('mouseleave', handleMouseLeaveTable);
 		tableItem.innerText = item.name;
 
 		if (!riskTabIsOpen) {
-			const approachContent = document.createElement('div');
-			approachContent.classList.add('approach__content', 'hidden');
-			approachContent.innerText = JSON.stringify(item.solutions);
-			tableItem.appendChild(approachContent);
-
 			// Toggle content visibility on click
 			tableItem.addEventListener('click', () => {
 				approachContent.classList.toggle('hidden');
