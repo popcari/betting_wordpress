@@ -356,6 +356,9 @@ const approachTableHeader = document.getElementById('approachTab');
 risksTableHeader.classList.add('bg-[#FFAB40]', 'text-white', 'uppercase', 'underline');
 approachTableHeader.classList.remove('bg-[#FFAB40]', 'text-white', 'uppercase', 'underline');
 
+risksTableHeader.addEventListener('click', onRiskTabClick);
+approachTableHeader.addEventListener('click', onApproachClick);
+
 listIdElement.forEach((id) => {
 	const _elm = document.getElementById(id)
 	if (_elm) {
