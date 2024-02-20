@@ -434,58 +434,12 @@ function updateTableContent(data) {
 	 * TODO: table mouse leave event handler
 	 */
 const handleMouseLeaveTable = () => {
-	const _line = document.getElementById('line__background')
-
-	_line.style.fill = '#fff0'
 	listIdElement.map((e, index) => {
 		const _elm = document.getElementById(e)
 		if (_elm) {
 			_elm.style.opacity = '1'
 		}
-		const _classElement = document.getElementsByClassName(e)
-		if (_classElement.length) {
-			for (let i = 0; i < _classElement.length; i++) {
-				const element = _classElement[i].id
-				const _elementLine = document.getElementById(element)
-				const name = `${(_elementLine.className).animVal}`
-
-				if (_elementLine) {
-					_elementLine.style.scale = '1'
-					if (name.includes('cls-4')) {
-						_elementLine.style.fill = '#001633'
-					} else if (name.includes('cls-5')) {
-						_elementLine.style.fill = '#263952'
-					} else if (name.includes('cls-1')) {
-						_elementLine.style.fill = '#ffab40'
-					}
-				}
-			}
-		}
 	})
-
-	const layer4 = document.querySelectorAll('.cls-2')
-	const layer3 = document.querySelectorAll('.cls-5')
-	const layer2 = document.querySelectorAll('.cls-4')
-	const layer1 = document.querySelectorAll('.cls-1')
-
-	for (let i = 0; i < layer1.length; i++) {
-		let l1_element = layer1[i].id
-		let l2_element = layer2[i].id
-		let l3_element = layer3[i].id
-		let l4_element = layer4[i].id
-
-		const l1_chartPart = document.getElementById(l1_element)
-		const l2_chartPart = document.getElementById(l2_element)
-		const l3_chartPart = document.getElementById(l3_element)
-		const l4_chartPart = document.getElementById(l4_element)
-
-		if (l1_chartPart) {
-			l1_chartPart.style.opacity = '1'
-			l2_chartPart.style.opacity = '1'
-			l3_chartPart.style.opacity = '1'
-			l4_chartPart.style.opacity = '1'
-		}
-	}
 }
 
 /**
@@ -493,19 +447,8 @@ const handleMouseLeaveTable = () => {
  * @param item : risks/solution item
  */
 const handleMouseOverTable = (item) => {
-	;['cls-1', 'cls-4', 'cls-5', 'cls-2'].map((e) => {
-		const _classElement = document.getElementsByClassName(e)
-		if (_classElement.length) {
-			for (let i = 0; i < _classElement.length; i++) {
-				const element = _classElement[i].id
-				const _elementLine = document.getElementById(element)
-			}
-		}
-	})
-
 	listIdElement.map((e, index) => {
 		const _elm = document.getElementById(e)
-		const _classElement = document.getElementsByClassName(e)
 
 		if (_elm) {
 			if (item.solutions.includes(e)) {
@@ -515,22 +458,7 @@ const handleMouseOverTable = (item) => {
 				_elm.style.opacity = '.2'
 			}
 		}
-		if (_classElement.length && item.solutions.includes(e)) {
-			for (let i = 0; i < _classElement.length; i++) {
-				const element = _classElement[i].id
-				const _elementLine = document.getElementById(element)
-				const name = `${(_elementLine.className).animVal}`
 
-				if (_elementLine && name.includes(e)) {
-					_elementLine.style.opacity = '1'
-					if (name.includes('cls-4')) {
-					} else if (name.includes('cls-5')) {
-					} else if (name.includes('cls-1')) {
-
-					}
-				}
-			}
-		}
 	})
 }
 
