@@ -353,8 +353,8 @@ const approachTableElement = document.getElementById('approach');
 
 const risksTableHeader = document.getElementById('riskTab');
 const approachTableHeader = document.getElementById('approachTab');
-risksTableHeader.classList.add('bg-[#FFAB40]', 'text-white', 'uppercase');
-approachTableHeader.classList.remove('bg-[#FFAB40]', 'text-white', 'uppercase');
+risksTableHeader.classList.add('bg-[#000]', 'text-white', 'uppercase', 'transition-colors', 'duration-300');
+approachTableHeader.classList.remove('bg-[#000]', 'text-white', 'uppercase', 'transition-colors', 'duration-300');
 
 risksTableHeader.addEventListener('click', onRiskTabClick);
 approachTableHeader.addEventListener('click', onApproachClick);
@@ -393,8 +393,8 @@ function onRiskTabClick() {
 		approachTableElement.style.display = 'none';
 
 		risksTableElement.style.display = 'grid';
-		risksTableHeader.classList.add('bg-[#FFAB40]', 'text-white', 'uppercase');
-		approachTableHeader.classList.remove('bg-[#FFAB40]', 'text-white', 'uppercase');
+		risksTableHeader.classList.add('bg-[#000]', 'text-white', 'uppercase');
+		approachTableHeader.classList.remove('bg-[#000]', 'text-white', 'uppercase');
 	}
 }
 
@@ -405,9 +405,9 @@ function onApproachClick() {
 	if (risksTableElement) {
 		risksTableElement.style.display = 'none';
 
-		approachTableElement.style.display = 'grid';
-		approachTableHeader.classList.add('bg-[#FFAB40]', 'text-white', 'uppercase');
-		risksTableHeader.classList.remove('bg-[#FFAB40]', 'text-white', 'uppercase');
+
+		approachTableHeader.classList.add('bg-[#000]', 'text-white', 'uppercase', 'transition-colors', 'duration-300');
+		risksTableHeader.classList.remove('bg-[#000]', 'text-white', 'uppercase', 'transition-colors', 'duration-300');
 	}
 }
 function updateTableContent(data) {
@@ -416,7 +416,7 @@ function updateTableContent(data) {
 
 	data.forEach((item, index) => {
 		const tableItem = document.createElement('div');
-		tableItem.classList.add('p-2', 'hover:bg-[#FFAB40]', 'hover:text-white', 'border', 'border-solid', 'border-[#DBDBDB]', 'hover:transition-colors', 'text-[14px]');
+		tableItem.classList.add('p-2', 'hover:text-[#FFAB40]', 'hover:font-bold', 'hover:transition-colors', 'hover:duration-300', 'text-[12px]');
 		tableItem.addEventListener('mousemove', () => handleMouseOverTable(item));
 		tableItem.addEventListener('mouseleave', handleMouseLeaveTable);
 		tableItem.innerText = item.name;

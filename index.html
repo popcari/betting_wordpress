@@ -58,7 +58,6 @@
 			tspan {
 				cursor: pointer;
 				font-family: 'Sora', sans-serif;
-
 			}
 
 			.cyberSecurity {
@@ -73,7 +72,7 @@
 	</head>
 
 	<body>
-		<div class='w-[1277px] max-w-full h-screen min-h-[900px] mx-auto p-[76.5px_0_71.5px] lg:flex'>
+		<div class='w-[1277px] max-w-full h-screen lg:h-fit min-h-[900px] mx-auto p-[76.5px_0_71.5px] lg:flex'>
 			<!-- risks and solution table -->
 			<div class='mb-10 lg:mr-[30px] lg:w-2/5 lg:mb-0'>
 				<p class='font__poppins text-[40px] font-bold leading-[60px] tracking-[0.8px] mb-6'>
@@ -81,11 +80,11 @@
 				</p>
 				<div class='cyberSecurity p-2 lg:p-0'>
 					<div class='cyberSecurity__head grid grid-cols-2'>
-						<div class='border border-solid border-[#DBDBDB] p-2 lg:p-4 flex cursor-pointer' id="riskTab">
+						<div class='p-2 lg:p-4 flex cursor-pointer' id="riskTab">
 							<p class='p-0 text-[14px] font-bold text-center'>Cyber Security Risks</p>
 						</div>
-						<div class='border border-solid border-[#DBDBDB] p-2 lg:p-4 flex cursor-pointer' id="approachTab">
-							<p class='p-0 text-[14px] font-bold text-center'>Kapalins Apprpoach</p>
+						<div class='p-2 lg:p-4 flex cursor-pointer' id="approachTab">
+							<p class='p-0 text-[14px] font-bold text-center'>Kapalins Approach</p>
 						</div>
 					</div>
 					<div id='risks__table' class='risks grid grid-cols-2'>
@@ -97,7 +96,7 @@
 				</div>
 			</div>
 			<!-- sunburst chart -->
-			<div class='lg:w-3/5 h-full'>
+			<div class='lg:w-3/5 h-full '>
 				<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1'
 					id='Layer_2_00000075859017773107132920000010105762589442756230_' x='0px' y='0px' viewBox='0 0 790 790'
 					xml:space='preserve'>
@@ -270,16 +269,20 @@
 							</tspan>
 						</text>
 						<text transform='matrix(1 0 0 1 418.13 439.02)' class='st5 st6 cls-6 text-black'>
-							<tspan id='Mgmt_Framework'>Mgmt & Framework</tspan>
+							<tspan id='Mgmt_Framework' y='-10'>Mgmt
+								<tspan x='0' dy='15'>
+									& Framework
+								</tspan>
+							</tspan>
 						</text>
 						<text transform='matrix(1 0 0 1 428.13 459.02)' class='st5 st6 cls-6 text-black'>
-							<tspan id='SOAR'>SOAR</tspan>
+							<tspan id='SOAR' x='10' y='0'>SOAR</tspan>
 						</text>
 						<text transform='matrix(1 0 0 1 387.13 426.02)' class='st5 st6 cls-6 text-black'>
 							<tspan id='GRC'>GRC</tspan>
 						</text>
 						<text transform='matrix(1 0 0 1 412.13 491.02)' class='st5 st6 cls-6 text-black'>
-							<tspan id='NIST'>NIST</tspan>
+							<tspan id='NIST' x='-10'>NIST</tspan>
 						</text>
 						<text transform='matrix(1 0 0 1 361.13 444.02)' class='st5 st6 cls-6 text-black'>
 							<tspan id='FRMS'>FRMS</tspan>
@@ -300,7 +303,11 @@
 							<tspan id='A-APT'>A-APT</tspan>
 						</text>
 						<text transform='matrix(1 0 0 1 283.13 424.02)' class='st5 st6 cls-6 text-black'>
-							<tspan id='DNS_security'>DNS Security</tspan>
+							<tspan id='DNS_security' x='5' y='-5'>DNS
+								<tspan dx='-30' dy='10'>
+									Security
+								</tspan>
+							</tspan>
 						</text>
 					</g>
 					<!-- {/* layer 2 text */} -->
@@ -309,7 +316,7 @@
 							<tspan id='DAM'>DAM</tspan>
 						</text>
 						<text transform='matrix(1 0 0 1 222.02 355.56)' class='st5 st6 text-white'>
-							<tspan id='Encryption'>Encryption</tspan>
+							<tspan id='Encryption' x='-10' y='20'>Encryption</tspan>
 						</text>
 						<text transform='matrix(1 0 0 1 260.95 265.69)' class='st5 st6 text-white'>
 							<tspan id='HIPS'>HIPS</tspan>
@@ -327,7 +334,7 @@
 							<tspan id='EMM'>EMM</tspan>
 						</text>
 						<text transform='matrix(1 0 0 1 403.87 236.57)' class='st5 st6 text-white'>
-							<tspan id='Code Review'>Code Review</tspan>
+							<tspan id='Code Review' x='-8'>Code Review</tspan>
 						</text>
 						<text transform='matrix(1 0 0 1 413.87 266.57)' class='st5 st6 text-white'>
 							<tspan id='WAF'>WAF</tspan>
@@ -342,30 +349,33 @@
 							<tspan id='PIM/PAM'>PIM/PAM</tspan>
 						</text>
 						<text transform='matrix(1 0 0 1 490.7 342.56)' class='st5 st6 text-white'>
-							<tspan id='Data_encryption'>Data Encryption</tspan>
+							<tspan id='Data_encryption' x='10'>Data
+								<tspan x='10' y='15'>
+									Encryption</tspan>
+							</tspan>
 						</text>
 						<text transform='matrix(1 0 0 1 540.7001 372.56)' class='st5 st6 text-white'>
-							<tspan id='DLP'>DLP</tspan>
+							<tspan id='DLP' y='10'>DLP</tspan>
 						</text>
 						<text transform='matrix(1 0 0 1 516.7 415.61)' class='st5 st6 text-white'>
 							<tspan id='GAP'>GAP</tspan>
 						</text>
 						<text transform='matrix(1 0 0 1 506.7 455.61)' class='st5 st6 text-white'>
-							<tspan id='Assessments'>Assessments</tspan>
+							<tspan id='Assessments' x='-10' y='-20'>Assessments</tspan>
 						</text>
 						<text transform='matrix(1 0 0 1 478.21 479.43)' class='st5 st6 text-white'>
-							<tspan id='Adaptive_incident_response' x='0' y='0'>
+							<tspan id='Adaptive_incident_response' x='-15' y='0'>
 								Adaptive
-								<tspan dx='-50' dy='20'>
+								<tspan dx='-60' dy='15'>
 									Incident
-									<tspan dx='-50' dy='20'>
+									<tspan dx='-50' dy='15'>
 										Response
 									</tspan>
 								</tspan>
 							</tspan>
 						</text>
 						<text transform='matrix(1 0 0 1 397.24 524.36)' class='st5 st6 text-white'>
-							<tspan id='PCI/GDPR/APRA/Essential' x='0' y='0'>
+							<tspan id='PCI/GDPR/APRA/Essential' x='0' y='-5'>
 								PCI/GDPR
 								<tspan id='PCI/GDPR/APRA/Essential' dx='-50' dy='20'>
 									/APRA
@@ -382,7 +392,7 @@
 							<tspan id='SIEM'>SIEM</tspan>
 						</text>
 						<text transform='matrix(1 0 0 1 341 556.36)' class='st5 st6 text-white'>
-							<tspan id='Analytics'>Analytics</tspan>
+							<tspan id='Analytics' x='-20'>Analytics</tspan>
 						</text>
 						<text transform='matrix(1 0 0 1 275.66 477.5)' class='st5 st6 text-white'>
 							<tspan id='CSPM'>CSPM</tspan>
@@ -399,7 +409,7 @@
 							</tspan>
 						</text>
 						<text transform='matrix(1 0 0 1 245.28 428.98)' class='st5 st6 text-white'>
-							<tspan id='NW_segmentation' x='-30' y='-10'>
+							<tspan id='NW_segmentation' x='-40' y='-5'>
 								NW
 								<tspan id='NW_segmentation' dx='-20' dy='15'>
 									Segmentation
@@ -478,25 +488,42 @@
 							<tspan id='VA/PT'>VA/PT</tspan>
 						</text>
 						<text transform='matrix(1 0 0 1 572.11 480.2)' class='st5 st6 text-white'>
-							<tspan id='Audit Framework'>Audit Framework</tspan>
+							<tspan id='Audit Framework' x='-10'>Audit Framework</tspan>
 						</text>
 						<text transform='matrix(1 0 0 1 528.4901 544.28)' class='st5 st6 text-white'>
-							<tspan id='Training_&_awareness'>Training & Awareness</tspan>
+							<tspan id='Training_&_awareness' y='-10'>
+								Training &
+								<tspan dx='-40' dy='10'>
+									Awareness
+								</tspan>
+							</tspan>
 						</text>
 						<text transform='matrix(1 0 0 1 513.49 574.28)' class='st5 st6 text-white'>
-							<tspan id='IT_Policy_Framework'>IT Policy Framework</tspan>
+							<tspan id='IT_Policy_Framework'>IT Policy
+								<tspan dx='-40' dy='10'>
+									Framework
+								</tspan>
+							</tspan>
 						</text>
 						<text transform='matrix(1 0 0 1 421.24 621.0499)' class='st5 st6 text-white'>
 							<tspan id='ISO Standard'>ISO Standard</tspan>
 						</text>
 						<text transform='matrix(1 0 0 1 296.13 599.0499)' class='st5 st6 text-white'>
-							<tspan id='Packet Analyses'>Packet Analyses</tspan>
+							<tspan id='Packet Analyses' x='-10'>Packet Analyses</tspan>
 						</text>
 						<text transform='matrix(1 0 0 1 276.13 629.0499)' class='st5 st6 text-white'>
-							<tspan id='Anti Trojan/Phishing'>Anti Trojan/Phishing</tspan>
+							<tspan id='Anti Trojan/Phishing' x='-15' y='10'>Anti Trojan/Phishing</tspan>
 						</text>
 						<text transform='matrix(1 0 0 1 165.3099 559.86)' class='st5 st6 text-white'>
-							<tspan id='Single_Internet_Breakout'>Single Internet Breakout</tspan>
+							<tspan class='text-white' id='Single_Internet_Breakout' dx='20' dy='-20'>
+								Single
+								<tspan x='25' dy='15'>
+									Internet
+									<tspan x='30' dy='15'>
+										Breakout
+									</tspan>
+								</tspan>
+							</tspan>
 						</text>
 						<text transform='matrix(1 0 0 1 120.39 411.77)' class='st5 st6 text-white'>
 							<tspan id='NG-FW'>NG-FW</tspan>
