@@ -421,13 +421,6 @@ function updateTableContent(data) {
 		tableItem.addEventListener('mouseleave', handleMouseLeaveTable);
 		tableItem.innerText = item.name;
 
-		if (!riskTabIsOpen) {
-			// Toggle content visibility on click
-			tableItem.addEventListener('click', () => {
-				approachContent.classList.toggle('hidden');
-			});
-		}
-
 		tableContainer.appendChild(tableItem);
 	});
 	const approachElement = document.getElementById('approach');
@@ -436,7 +429,6 @@ function updateTableContent(data) {
 		approachElement.style.display = riskTabIsOpen ? 'none' : 'block';
 	}
 }
-
 
 /**
 	 * TODO: table mouse leave event handler
@@ -449,7 +441,6 @@ const handleMouseLeaveTable = () => {
 		const _elm = document.getElementById(e)
 		if (_elm) {
 			_elm.style.opacity = '1'
-			_elm.style.fill = 'black'
 		}
 		const _classElement = document.getElementsByClassName(e)
 		if (_classElement.length) {
@@ -461,11 +452,11 @@ const handleMouseLeaveTable = () => {
 				if (_elementLine) {
 					_elementLine.style.scale = '1'
 					if (name.includes('cls-4')) {
-						_elementLine.style.fill = '#b1b1b1'
+						_elementLine.style.fill = '#001633'
 					} else if (name.includes('cls-5')) {
-						_elementLine.style.fill = '#cbcbcb'
+						_elementLine.style.fill = '#263952'
 					} else if (name.includes('cls-1')) {
-						_elementLine.style.fill = '#85d5e6'
+						_elementLine.style.fill = '#ffab40'
 					}
 				}
 			}
@@ -522,7 +513,6 @@ const handleMouseOverTable = (item) => {
 				_elm.style.transition = 'all 0.3s ease'
 			} else {
 				_elm.style.opacity = '.2'
-				_elm.style.fill = 'black'
 			}
 		}
 		if (_classElement.length && item.solutions.includes(e)) {
