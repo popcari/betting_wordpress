@@ -10,6 +10,10 @@
 
 		<!-- Replace with your actual CSS file or styles -->
 		<style>
+			* {
+				font-family: "Sora", sans-serif;
+			}
+
 			.cls-2 {
 				fill: #f7f9fb;
 			}
@@ -31,15 +35,9 @@
 				fill-opacity: 0;
 			}
 
-			.st5 {
-				font-family: 'Sora', sans-serif;
-			}
-
 			.st6 {
 				font-size: 12px;
 			}
-
-
 
 			.text-black {
 				fill: #000000;
@@ -66,6 +64,14 @@
 			.approach__item {
 				cursor: pointer;
 			}
+
+			#riskTab {
+				clip-path: polygon(0 0, 90% 0, 100% 100%, 0 100%);
+			}
+
+			#approachTab {
+				clip-path: polygon(10% 0, 100% 0, 100% 100%, 0 100%);
+			}
 		</style>
 	</head>
 
@@ -79,19 +85,23 @@
 						Security
 					</span>
 				</p>
-				<div class='cyberSecurity p-2 lg:p-0'>
+				<p id='headerTitle' class='mb-2 font-bold'>
+					Unmask the Top 10 Cyber Threats and Their Solutions You NEED to Know Now!​
+				</p>
+				<div class=' cyberSecurity p-2 lg:p-0'>
 					<div class='cyberSecurity__head grid grid-cols-2'>
-						<div class='p-2 lg:p-4 flex cursor-pointer' id="riskTab">
+						<div class='p-2 lg:p-4 flex cursor-pointer justify-center' id="riskTab">
 							<p class='p-0 text-[14px] font-bold text-center'>Cyber Security Risks</p>
 						</div>
-						<div class='p-2 lg:p-4 flex cursor-pointer' id="approachTab">
+						<div class='p-2 lg:p-4 flex cursor-pointer justify-center' id="approachTab">
 							<p class='p-0 text-[14px] font-bold text-center'>Kapalins Approach</p>
 						</div>
 					</div>
-					<div id='risks__table' class='risks grid grid-cols-2'>
+					<div id='risks__table' class='risks grid grid-cols-2 bg-[#FFAB40] rounded-bl-lg rounded-br-lg rounded-tr-lg'>
 						<!-- Risks table content will be added dynamically using JavaScript -->
 					</div>
-					<div id='approach' class='grid grid-cols-2' style='display: none;'>
+					<div id='approach' class='bg-[#FFAB40] transition-all duration-1000 rounded-bl-lg rounded-br-lg rounded-tl-lg'
+						style='display: none;'>
 						<!-- Approach table content will be added dynamically using JavaScript -->
 					</div>
 				</div>
