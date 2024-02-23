@@ -160,12 +160,12 @@ const solutions = [
       'VPN/ZTNA',
       'Database Security',
       'Endpoint Security',
-      'Applications Security',
+      'Applications_Security',
       'Identity and ',
       'Access Management',
-      'Workload Security',
+      'Workload_Security',
       'Data & Content Security',
-      'Process Management',
+      'Process_Management',
       'Security_Assessment',
       'Segmentation',
       'Cloud Security',
@@ -259,6 +259,7 @@ const listIdElement = [
   'CIAM',
   'Data_encryption',
   'Encryptions',
+  'NW_Forensic_and_Analyses',
   'Training_&_awareness',
   'DNS',
   'HIPS',
@@ -331,12 +332,12 @@ const listIdElement = [
   'VPN/ZTNA',
   'Database Security',
   'Endpoint Security',
-  'Applications Security',
+  'Applications_Security',
   'Identity and ',
   'Access Management',
-  'Workload Security',
+  'Workload_Security',
   'Data & Content Security',
-  'Process Management',
+  'Process_Management',
   'Security_Assessment',
   'Compliance Management',
   'NW Forensic and Analyses',
@@ -482,6 +483,27 @@ const handleMouseLeaveTable = () => {
     if (_elm) {
       _elm.style.opacity = '1';
     }
+    const _classElement = document.getElementsByClassName(e);
+    if (_classElement.length) {
+      for (let i = 0; i < _classElement.length; i++) {
+        const element = _classElement[i].id;
+        const _elementLine = document.getElementById(element);
+        const name = `${_elementLine.className.animVal}`;
+
+        if (_elementLine) {
+          _elementLine.style.scale = '1';
+          if (name.includes('cls-4')) {
+            _elementLine.style.fill = '#d2d8e4';
+          } else if (name.includes('cls-2')) {
+            _elementLine.style.fill = '#f7f9fb';
+          } else if (name.includes('cls-5')) {
+            _elementLine.style.fill = '#e8ecf2';
+          } else if (name.includes('cls-1')) {
+            _elementLine.style.fill = '#b8c2d1';
+          }
+        }
+      }
+    }
   });
 };
 
@@ -492,6 +514,7 @@ const handleMouseLeaveTable = () => {
 const handleMouseOverTable = (item) => {
   listIdElement.map((e, index) => {
     const _elm = document.getElementById(e);
+    const _classElement = document.getElementsByClassName(e);
 
     if (_elm) {
       if (item.solutions.includes(e)) {
@@ -499,6 +522,31 @@ const handleMouseOverTable = (item) => {
         _elm.style.transition = 'all 0.3s ease';
       } else {
         _elm.style.opacity = '.2';
+      }
+    }
+
+    if (_classElement.length && item.solutions.includes(e)) {
+      for (let i = 0; i < _classElement.length; i++) {
+        const element = _classElement[i].id;
+        const _elementLine = document.getElementById(element);
+        const name = `${_elementLine.className.animVal}`;
+
+        if (_elementLine && name.includes(e)) {
+          // _elementLine.style.scale = '1.03';
+          _elementLine.style.opacity = '1';
+
+          if (name.includes('cls-4')) {
+            _elementLine.style.fill = '#d0ab9d';
+          } else if (name.includes('cls-2')) {
+            _elementLine.style.fill = '#f8e9df';
+          } else if (name.includes('cls-5')) {
+            _elementLine.style.fill = '#edd6c9';
+          } else if (name.includes('cls-1')) {
+            _elementLine.style.fill = '#a5918d';
+
+            if (_elm && item.solutions.includes(e)) _elm.style.fill = 'black';
+          }
+        }
       }
     }
   });
