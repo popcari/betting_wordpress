@@ -363,14 +363,14 @@ const risksTableHeader = document.getElementById('riskTab');
 const approachTableHeader = document.getElementById('approachTab');
 
 risksTableHeader.classList.add(
-  'bg-[#FFAB40]',
+  'bg-[#f57c00]',
   'text-white',
   'uppercase',
   'transition-colors',
   'duration-300'
 );
 approachTableHeader.classList.remove(
-  'bg-[#FFAB40]',
+  'bg-[#f57c00]',
   'text-white',
   'uppercase',
   'transition-colors',
@@ -447,9 +447,9 @@ function onRiskTabClick() {
     approachTableElement.style.display = 'none';
 
     risksTableElement.style.display = 'grid';
-    risksTableHeader.classList.add('bg-[#FFAB40]', 'text-white', 'uppercase');
+    risksTableHeader.classList.add('bg-[#f57c00]', 'text-white', 'uppercase');
     approachTableHeader.classList.remove(
-      'bg-[#FFAB40]',
+      'bg-[#f57c00]',
       'text-white',
       'uppercase'
     );
@@ -466,14 +466,14 @@ function onApproachClick() {
     risksTableElement.style.display = 'none';
 
     approachTableHeader.classList.add(
-      'bg-[#FFAB40]',
+      'bg-[#f57c00]',
       'text-white',
       'uppercase',
       'transition-colors',
       'duration-300'
     );
     risksTableHeader.classList.remove(
-      'bg-[#FFAB40]',
+      'bg-[#f57c00]',
       'text-white',
       'uppercase',
       'transition-colors',
@@ -491,7 +491,7 @@ function updateTableContent(data) {
     const tableItem = document.createElement('div');
     tableItem.classList.add(
       'p-2',
-      // 'hover:text-[#FFAB40]',
+      // 'hover:text-[#f57c00]',
       'hover:font-bold',
       'hover:transition-colors',
       'hover:duration-300',
