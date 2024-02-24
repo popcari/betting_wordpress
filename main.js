@@ -159,7 +159,7 @@ const solutions = [
       'Proxy/SWG',
       'VPN/ZTNA',
       'Database Security',
-      'Endpoint Security',
+      'Endpoint_Security',
       'Applications_Security',
       'Identity and ',
       'Access Management',
@@ -168,8 +168,8 @@ const solutions = [
       'Process_Management',
       'Security_Assessment',
       'Segmentation',
-      'Cloud Security',
-      'Network Security',
+      'Cloud_Security',
+      'Network_Security',
       'PAM',
       'Content',
     ],
@@ -331,19 +331,18 @@ const listIdElement = [
   'Proxy/SWG',
   'VPN/ZTNA',
   'Database Security',
-  'Endpoint Security',
+  'Endpoint_Security',
   'Applications_Security',
   'Identity and ',
   'Access Management',
   'Workload_Security',
-  'Data & Content Security',
   'Process_Management',
   'Security_Assessment',
-  'Compliance Management',
+  'Compliance_Management',
   'NW Forensic and Analyses',
   'Segmentation',
-  'Cloud Security',
-  'Network Security',
+  'Cloud_Security',
+  'Network_Security',
   'PAM',
   'PCI/GDPR/APRA//Essential',
   'Content',
@@ -388,16 +387,45 @@ function _onMover(e) {
   listIdElement.forEach((id) => {
     const _elm = document.getElementById(id);
     if (_elm) {
+      const classElm = document.getElementsByClassName(e.target.id);
+      for (let i = 0; i < classElm.length; i++) {
+        const element = classElm[i];
+        if (element.classList.contains('cls-2')) {
+          element.style.fill = 'rgba(248,233,223,255)';
+        } else if (element.classList.contains('cls-5')) {
+          element.style.fill = '#edd6c9';
+        } else if (element.classList.contains('cls-4')) {
+          element.style.fill = '#cfaa9c';
+        } else if (element.classList.contains('cls-1')) {
+          element.style.fill = '#a5918d';
+        }
+      }
+      console.log(classElm.length);
       _elm.style.opacity = id === e.target.id ? '1' : '.2';
       _elm.style.transition = 'all 0.2s ease-in';
     }
   });
 }
 
-function _onLeaver() {
+function _onLeaver(e) {
   listIdElement.forEach((id) => {
     const _elm = document.getElementById(id);
-    if (_elm) _elm.style.opacity = '1';
+    if (_elm) {
+      _elm.style.opacity = '1';
+      const classElm = document.getElementsByClassName(e.target.id);
+      for (let i = 0; i < classElm.length; i++) {
+        const element = classElm[i];
+        if (element.classList.contains('cls-2')) {
+          element.style.fill = '#f7f9fb';
+        } else if (element.classList.contains('cls-5')) {
+          element.style.fill = '#e8ecf2';
+        } else if (element.classList.contains('cls-4')) {
+          element.style.fill = '#d2d8e4';
+        } else if (element.classList.contains('cls-1')) {
+          element.style.fill = '#b8c2d1';
+        }
+      }
+    }
   });
 }
 
