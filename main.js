@@ -173,6 +173,8 @@ const solutions = [
       'PAM',
       'Content',
     ],
+    definition:
+      'Zero Trust is an approach where no one and nothing is inherently trusted, requiring continuous verification and granting only the minimum access needed. This increases security, compliance, and agility, making it a valuable investment for your organization.​',
   },
   {
     name: 'SASE',
@@ -187,6 +189,8 @@ const solutions = [
       'CASB',
       'NDR',
     ],
+    definition:
+      'SASE (Secure Access Service Edge) empowers remote access to applications and data, seamlessly merging networking and security in a cloud platform for enhanced protection and simplified management - all from anywhere, on any device.​',
   },
   {
     name: 'Cyber Resilient and fully protect',
@@ -206,6 +210,7 @@ const solutions = [
       'PAM',
       'VA/PT',
     ],
+    definition: `Cyber-resilient solutions go beyond "fully protect" They combine prevention, detection, and recovery with adaptability to minimize the impact of inevitable breaches, offering a holistic approach to cybersecurity.​`,
   },
   {
     name: 'Zero Day Attacks Protection',
@@ -226,6 +231,7 @@ const solutions = [
       'TH/TI',
       'PIM/PAM',
     ],
+    definition: `Zero Day attacks are challenging, but protection involves layers of security, threat intelligence, application control, sandboxing, user awareness, and swift patching, all working together to minimize their impact.​`,
   },
 ];
 const listIdElement = [
@@ -349,6 +355,7 @@ const listIdElement = [
 ];
 
 let riskTabIsOpen = true;
+let definitionIsOpen = false;
 const risksTableElement = document.getElementById('risks__table');
 const approachTableElement = document.getElementById('approach');
 
@@ -374,6 +381,8 @@ risksTableHeader.addEventListener('click', onRiskTabClick);
 approachTableHeader.addEventListener('click', onApproachClick);
 
 let tabTitle = document.getElementById('headerTitle');
+let approachDefinition = document.getElementById('approachDefinition');
+console.log('Approach Definition', approachDefinition);
 
 listIdElement.forEach((id) => {
   const _elm = document.getElementById(id);
@@ -400,7 +409,6 @@ function _onMover(e) {
           element.style.fill = '#a5918d';
         }
       }
-      console.log(classElm.length);
       _elm.style.opacity = id === e.target.id ? '1' : '.2';
       _elm.style.transition = 'all 0.2s ease-in';
     }
@@ -533,6 +541,9 @@ const handleMouseLeaveTable = () => {
       }
     }
   });
+
+  approachDefinition.innerText = '';
+  approachDefinition.classList.add('hidden');
 };
 
 /**
@@ -543,7 +554,6 @@ const handleMouseOverTable = (item) => {
   listIdElement.map((e, index) => {
     const _elm = document.getElementById(e);
     const _classElement = document.getElementsByClassName(e);
-
     if (_elm) {
       if (item.solutions.includes(e)) {
         _elm.style.opacity = '1';
@@ -578,6 +588,9 @@ const handleMouseOverTable = (item) => {
       }
     }
   });
+  if (!item.definition) return;
+  approachDefinition.innerText = item.definition;
+  approachDefinition.classList.remove('hidden');
 };
 
 // Add initial content to the risks table
