@@ -447,11 +447,20 @@ function onRiskTabClick() {
     approachTableElement.style.display = 'none';
 
     risksTableElement.style.display = 'grid';
-    risksTableHeader.classList.add('bg-[#f57c00]', 'text-white', 'uppercase');
+    risksTableHeader.classList.remove('text-[#000]');
+    risksTableHeader.classList.add(
+      'bg-[#f57c00]',
+      'text-white',
+      'uppercase',
+      'transition-colors',
+      'duration-300'
+    );
     approachTableHeader.classList.remove(
       'bg-[#f57c00]',
       'text-white',
-      'uppercase'
+      'uppercase',
+      'transition-colors',
+      'duration-300'
     );
   }
 }
@@ -464,7 +473,7 @@ function onApproachClick() {
 
   if (risksTableElement) {
     risksTableElement.style.display = 'none';
-
+    approachTableHeader.classList.remove('text-[#000]');
     approachTableHeader.classList.add(
       'bg-[#f57c00]',
       'text-white',
