@@ -4,12 +4,24 @@ const risks = [
   {
     id: 0,
     name: 'Exploitation Of Workloads And Containers',
-    solutions: ['CWPP', 'SIEM', 'TH/TI', 'PAM'],
+    solutions: [
+      'CWPP',
+      'SIEM',
+      'TH/TI',
+      'PAM',
+      'Cloud_Security',
+      'NW_Forensic_and_Analyses',
+    ],
   },
   {
     id: 1,
     name: 'Misconfiguration And Inadequate Change Control',
-    solutions: ['CSPM', 'IT_Policy_Framework'],
+    solutions: [
+      'CSPM',
+      'IT_Policy_Framework',
+      'Cloud_Security',
+      'Process_Management',
+    ],
   },
   {
     id: 2,
@@ -20,6 +32,8 @@ const risks = [
       'CSPM',
       'IT_Policy_Framework',
       'Single_Internet_Breakout',
+      'Cloud_Security',
+      'Process_Management',
     ],
   },
   {
@@ -31,38 +45,72 @@ const risks = [
       'Encryptions',
       'CSPM',
       'Training_&_awareness',
+      'Cloud_Security',
+      'Process_Management',
+      'Data_Content_Security',
+      'Endpoint_Security',
+      'Database_Security',
     ],
   },
   {
     id: 4,
     name: 'Insecure Software Development',
-    solutions: ['VA/PT', 'Security', 'WAST', 'Security_Assessment'],
+    solutions: [
+      'VA/PT',
+      'Security',
+      'WAST',
+      'Security_Assessment',
+      'Applications_Security',
+    ],
   },
   {
     id: 5,
     name: 'Organised Crime Hacker An APT',
-    solutions: ['SIEM', 'Training_&_awareness', 'TH/TI'],
+    solutions: [
+      'SIEM',
+      'Training_&_awareness',
+      'TH/TI',
+      'Process_Management',
+      'NW_Forensic_and_Analyses',
+    ],
   },
   {
     id: 6,
     name: 'System Vulnerabilities',
-    solutions: ['Patch_mgmt', 'VA/PT', 'TH/TI', 'SIEM'],
+    solutions: [
+      'Patch_mgmt',
+      'VA/PT',
+      'TH/TI',
+      'SIEM',
+      'Security_Assessment',
+      'NW_Forensic_and_Analyses',
+      'Workload_Security',
+    ],
   },
   {
     id: 7,
     name: 'Insecure Interfaces And APIs',
-    solutions: ['WAF', 'Code Review', 'WAST'],
+    solutions: ['WAF', 'Code Review', 'WAST', 'Applications_Security'],
   },
   {
     id: 8,
 
     name: 'Insufficient Identity, Access And Key Mgmt. Privileged Accounts',
-    solutions: ['2FA', 'RBAC', 'PIM/PAM'],
+    solutions: ['2FA', 'RBAC', 'PIM/PAM', 'IAAM'],
   },
   {
     id: 9,
-    name: 'DLP',
-    solutions: ['Encryption', 'Encryptions', 'UEBA', 'DLP'],
+    name: 'Data Loss Prevention',
+    solutions: [
+      'Encryption',
+      'Encryptions',
+      'UEBA',
+      'DLP',
+      'Database_Security',
+      'Endpoint_Security',
+      'Data_Content_Security',
+      'NW_Forensic_and_Analyses',
+    ],
   },
 ];
 const solutions = [
@@ -158,7 +206,7 @@ const solutions = [
       'IPS/IDS',
       'Proxy/SWG',
       'VPN/ZTNA',
-      'Database Security',
+      'Database_Security',
       'Endpoint_Security',
       'Applications_Security',
       'Identity and ',
@@ -188,6 +236,10 @@ const solutions = [
       'TH/TI',
       'CASB',
       'NDR',
+      'NW_Forensic_and_Analyses',
+      'Data_Content_Security',
+      'Cloud_Security',
+      'Network_Security',
     ],
     definition:
       'SASE (Secure Access Service Edge) empowers remote access to applications and data, seamlessly merging networking and security in a cloud platform for enhanced protection and simplified management - all from anywhere, on any device.​',
@@ -209,6 +261,18 @@ const solutions = [
       'SIEM',
       'PAM',
       'VA/PT',
+      'NW_Forensic_and_Analyses',
+      'Data_Content_Security',
+      'Cloud_Security',
+      'Network_Security',
+      'Endpoint_Security',
+      'Data_Content_Security',
+      'NW_Forensic_and_Analyses',
+      'Security_Assessment',
+      'NW_Forensic_and_Analyses',
+      'Workload_Security',
+      'IAAM',
+      'Applications_Security',
     ],
     definition: `Cyber-resilient solutions go beyond "fully protect" They combine prevention, detection, and recovery with adaptability to minimize the impact of inevitable breaches, offering a holistic approach to cybersecurity.​`,
   },
@@ -230,6 +294,16 @@ const solutions = [
       'Email-sec',
       'TH/TI',
       'PIM/PAM',
+      'NW_Forensic_and_Analyses',
+      'Data_Content_Security',
+      'Cloud_Security',
+      'Network_Security',
+      'Data_Content_Security',
+      'NW_Forensic_and_Analyses',
+      'NW_Forensic_and_Analyses',
+      'Workload_Security',
+      'IAAM',
+      'Applications_Security',
     ],
     definition: `Zero Day attacks are challenging, but protection involves layers of security, threat intelligence, application control, sandboxing, user awareness, and swift patching, all working together to minimize their impact.​`,
   },
@@ -336,7 +410,7 @@ const listIdElement = [
   'IPS/IDS',
   'Proxy/SWG',
   'VPN/ZTNA',
-  'Database Security',
+  'Database_Security',
   'Endpoint_Security',
   'Applications_Security',
   'Identity and ',
@@ -345,7 +419,6 @@ const listIdElement = [
   'Process_Management',
   'Security_Assessment',
   'Compliance_Management',
-  'NW Forensic and Analyses',
   'Segmentation',
   'Cloud_Security',
   'Network_Security',
@@ -363,15 +436,15 @@ const risksTableHeader = document.getElementById('riskTab');
 const approachTableHeader = document.getElementById('approachTab');
 
 risksTableHeader.classList.add(
-  'bg-[#f57c00]',
-  'text-white',
+  'bg-[#f0f0f0]',
+  'text-[#f57c00]',
   'uppercase',
   'transition-colors',
   'duration-300'
 );
 approachTableHeader.classList.remove(
-  'bg-[#f57c00]',
-  'text-white',
+  'bg-[#f0f0f0]',
+  'text-[#f57c00]',
   'uppercase',
   'transition-colors',
   'duration-300'
@@ -449,15 +522,15 @@ function onRiskTabClick() {
     risksTableElement.style.display = 'grid';
     risksTableHeader.classList.remove('text-[#000]');
     risksTableHeader.classList.add(
-      'bg-[#f57c00]',
-      'text-white',
+      'bg-[#f0f0f0]',
+      'text-[#f57c00]',
       'uppercase',
       'transition-colors',
       'duration-300'
     );
     approachTableHeader.classList.remove(
-      'bg-[#f57c00]',
-      'text-white',
+      'bg-[#f0f0f0]',
+      'text-[#f57c00]',
       'uppercase',
       'transition-colors',
       'duration-300'
@@ -475,15 +548,15 @@ function onApproachClick() {
     risksTableElement.style.display = 'none';
     approachTableHeader.classList.remove('text-[#000]');
     approachTableHeader.classList.add(
-      'bg-[#f57c00]',
-      'text-white',
+      'bg-[#f0f0f0]',
+      'text-[#f57c00]',
       'uppercase',
       'transition-colors',
       'duration-300'
     );
     risksTableHeader.classList.remove(
-      'bg-[#f57c00]',
-      'text-white',
+      'bg-[#f0f0f0]',
+      'text-[#f57c00]',
       'uppercase',
       'transition-colors',
       'duration-300'
@@ -500,7 +573,7 @@ function updateTableContent(data) {
     const tableItem = document.createElement('div');
     tableItem.classList.add(
       'p-2',
-      // 'hover:text-[#f57c00]',
+      'hover:text-[#f57c00]',
       'hover:font-bold',
       'hover:transition-colors',
       'hover:duration-300',
